@@ -1,10 +1,12 @@
 package com.password.service;
 
+import com.password.exception.NotValidException;
+
 public interface IPasswordVerificationService {
 
-	void validateLength(String s);
+	void validateLength(String s) throws NotValidException;
 
-	void isEmpty();
+	void isEmpty(String pass) throws NotValidException;
 
 	void shouldHaveOneUppercase(String s);
 
