@@ -46,12 +46,13 @@ public class PasswordVerificationService implements IPasswordVerificationService
 
 	}
 
-	public void shouldHaveOneLowercase(String s) throws NotValidException {
+	public boolean shouldHaveOneLowercase(String s) throws NotValidException {
 		if (!lowerCasePatten.matcher(s).find()) {
 			flag = false;
 			errorList.add("Password must have atleast one lowercase character !!");
 			throw new NotValidException("Password must have atleast one lowercase character !!");
 		}
+		return flag;
 
 	}
 
@@ -60,6 +61,22 @@ public class PasswordVerificationService implements IPasswordVerificationService
 			flag = false;
 			errorList.add("Password must have atleast one digit character !!");
 			throw new NotValidException("Password must have atleast one digit character !!");
+		}
+
+	}
+
+	public void passwordOkIfThreeCondPass(String s) throws NotValidException {
+		if (shouldHaveOneLowercase(s) == true && errorList != null && errorList.size() == 3) {
+			System.out.println("Password is OK");
+		}
+
+	}
+
+	public void passwordNotOkIfNotLowerCaseFail(String s) throws NotValidException {
+		// TODO Auto-generated method stub
+
+		if (shouldHaveOneLowercase(s) == false) {
+			System.out.println("Password is Never OK");
 		}
 
 	}

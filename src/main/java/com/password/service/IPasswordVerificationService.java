@@ -10,7 +10,7 @@ public interface IPasswordVerificationService {
 
 	void shouldHaveOneUppercase(String s) throws NotValidException;
 
-	void shouldHaveOneLowercase(String s) throws NotValidException;
+	boolean shouldHaveOneLowercase(String s) throws NotValidException;
 
 	void shouldHaveOneNumber(String s) throws NotValidException;
 
