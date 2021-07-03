@@ -37,8 +37,10 @@ public class PasswordVerificationService implements IPasswordVerificationService
 
 	}
 
-	public void shouldHaveOneLowercase(String s) {
-		// TODO Auto-generated method stub
+	public void shouldHaveOneLowercase(String s) throws NotValidException {
+		if (!lowerCasePatten.matcher(s).find()) {
+	        throw new NotValidException("Password must have atleast one lowercase character !!");
+	    }
 
 	}
 
