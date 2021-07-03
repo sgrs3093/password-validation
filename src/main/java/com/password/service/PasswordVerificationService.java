@@ -33,19 +33,21 @@ public class PasswordVerificationService implements IPasswordVerificationService
 	public void shouldHaveOneUppercase(String s) throws NotValidException {
 		if (!UpperCasePatten.matcher(s).find()) {
 			throw new NotValidException("Password must have atleast one uppercase character !!");
-	    }
+		}
 
 	}
 
 	public void shouldHaveOneLowercase(String s) throws NotValidException {
 		if (!lowerCasePatten.matcher(s).find()) {
-	        throw new NotValidException("Password must have atleast one lowercase character !!");
-	    }
+			throw new NotValidException("Password must have atleast one lowercase character !!");
+		}
 
 	}
 
-	public void shouldHaveOneNumber(String s) {
-		// TODO Auto-generated method stub
+	public void shouldHaveOneNumber(String pass) throws NotValidException {
+		if (!digitCasePatten.matcher(pass).find()) {
+			throw new NotValidException("Password must have atleast one digit character !!");
+		}
 
 	}
 

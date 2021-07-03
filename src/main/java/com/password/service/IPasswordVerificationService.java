@@ -12,7 +12,7 @@ public interface IPasswordVerificationService {
 
 	void shouldHaveOneLowercase(String s) throws NotValidException;
 
-	void shouldHaveOneNumber(String s);
+	void shouldHaveOneNumber(String s) throws NotValidException;
 
 	void passwordOkIfThreeCondPass();
 
