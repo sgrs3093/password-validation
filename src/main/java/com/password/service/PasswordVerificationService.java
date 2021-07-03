@@ -1,8 +1,15 @@
 package com.password.service;
 
+import java.util.regex.Pattern;
+
 import com.password.exception.NotValidException;
 
 public class PasswordVerificationService implements IPasswordVerificationService {
+
+	Pattern specailCharPatten = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+	Pattern UpperCasePatten = Pattern.compile("[A-Z ]");
+	Pattern lowerCasePatten = Pattern.compile("[a-z ]");
+	Pattern digitCasePatten = Pattern.compile("[0-9 ]");
 
 	public void verifyPassword(String password) {
 
