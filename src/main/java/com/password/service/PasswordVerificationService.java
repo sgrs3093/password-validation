@@ -30,8 +30,10 @@ public class PasswordVerificationService implements IPasswordVerificationService
 
 	}
 
-	public void shouldHaveOneUppercase(String s) {
-		// TODO Auto-generated method stub
+	public void shouldHaveOneUppercase(String s) throws NotValidException {
+		if (!UpperCasePatten.matcher(s).find()) {
+			throw new NotValidException("Password must have atleast one uppercase character !!");
+	    }
 
 	}
 

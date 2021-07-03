@@ -8,7 +8,7 @@ public interface IPasswordVerificationService {
 
 	void isEmpty(String pass) throws NotValidException;
 
-	void shouldHaveOneUppercase(String s);
+	void shouldHaveOneUppercase(String s) throws NotValidException;
 
 	void shouldHaveOneLowercase(String s);
 
